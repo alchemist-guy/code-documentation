@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ruby on Rails Docs - Coderz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Syntax Highlighting -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <style>
+      /* Custom scrollbar for sidebar */
+      .sidebar::-webkit-scrollbar {
+        width: 8px;
+      }
+      .sidebar::-webkit-scrollbar-thumb {
+        background: #4a5568;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Reuse sidebar from index.html -->
+    <div class="min-h-screen md:flex">
+      <!-- Sidebar Container -->
+      <aside
+        class="sidebar bg-gray-800 text-gray-300 w-64 fixed h-screen overflow-y-auto z-30"
+      >
+        <!-- Sidebar Content -->
+        <div class="p-4">
+          <a
+            href="index.html"
+            class="block mb-6 text-blue-400 hover:text-blue-300"
+          >
+            ← Back to Tech Stack
+          </a>
+          <h2 class="text-xl font-bold mb-4">Ruby on Rails</h2>
+          <!-- Nested Navigation -->
+          <nav>
+            <h3 class="text-sm font-semibold text-gray-400 mb-4">
+              RAILS DOCUMENTATION
+            </h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#introduction"
+                  class="sidebar-link flex items-center px-3 py-2 rounded hover:bg-gray-700"
+                >
+                  Introduction
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#installation"
+                  class="sidebar-link flex items-center px-3 py-2 rounded hover:bg-gray-700"
+                >
+                  Installation
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#mvc"
+                  class="sidebar-link flex items-center px-3 py-2 rounded hover:bg-gray-700"
+                >
+                  MVC Architecture
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#routing"
+                  class="sidebar-link flex items-center px-3 py-2 rounded hover:bg-gray-700"
+                >
+                  Routes
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#controllers"
+                  class="sidebar-link flex items-center px-3 py-2 rounded hover:bg-gray-700"
+                >
+                  Controllers
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#views"
+                  class="sidebar-link flex items-center px-3 py-2 rounded hover:bg-gray-700"
+                >
+                  Views
+                </a>
+              </li>
+              <!-- Add more sections -->
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="sidebarToggle"
+        class="md:hidden fixed top-4 left-4 z-40 p-2 bg-gray-800 rounded-lg text-white"
+      >
+        ☰
+      </button>
+
+      <main class="flex-1 p-8 bg-gray-50 md:ml-64">
+        <article class="max-w-4xl mx-auto">
+          <!-- Breadcrumb -->
+          <nav class="text-sm text-gray-600 mb-6">
+            <a href="index.html" class="hover:text-gray-800">Home</a> /
+            <span class="font-medium">Ruby on Rails</span>
+          </nav>
+
+          <!-- Course Outline -->
+          <div class="mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-6">
+              Ruby on Rails Mastery
+            </h1>
+            <div class="bg-blue-50 p-6 rounded-lg">
+              <h2 class="text-xl font-semibold mb-4">Learning Path</h2>
+              <ol class="list-decimal pl-6 space-y-3">
+                <li>Introduction to Rails</li>
+                <li>Setting Up Development Environment</li>
+                <li>MVC Architecture Deep Dive</li>
+                <li>Working with Models and Databases</li>
+                <!-- Add more steps -->
+              </ol>
+            </div>
+          </div>
+
+          <!-- Lesson 1: Introduction -->
+
+          <section id="introduction" class="mb-12 pt-8">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6">
+              1. Introduction to Ruby on Rails
+            </h2>
+
+            <div class="space-y-6 text-gray-600">
+              <!-- Overview -->
+              <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h3 class="text-xl font-semibold mb-4">
+                  What is Ruby on Rails?
+                </h3>
+
+                <p class="mb-4">
+                  Rails is a full-stack web framework that provides:
+                </p>
+                <ul class="list-disc pl-6 space-y-2">
+                  <li>
+                    <strong>Convention over Configuration:</strong> Sensible
+                    defaults for rapid development
+                  </li>
+                  <li>
+                    <strong>DRY Principle:</strong> "Don't Repeat Yourself"
+                    philosophy
+                  </li>
+                  <li>
+                    <strong>MVC Architecture:</strong> Clean separation of
+                    concerns
+                  </li>
+                  <li>
+                    <strong>Built-in Testing:</strong> Test-driven development
+                    support
+                  </li>
+                </ul>
+
+                <!-- Real-world Analogy -->
+                <div class="bg-green-50 p-4 rounded-lg mt-4">
+                  <h3 class="font-semibold mb-2">🍰 Cake Baking Analogy</h3>
+                  <p>Think of Rails as a professional kitchen where:</p>
+                  <ul class="list-disc pl-6 mt-2">
+                    <li><strong>Chef = Rails Developer</strong></li>
+                    <li><strong>Recipe Book = Rails Conventions</strong></li>
+                    <li><strong>Ingredients = Gems (Libraries)</strong></li>
+                  </ul>
+                </div>
+
+                <div class="mt-6 bg-blue-50 p-4 rounded-lg">
+                  <h4 class="font-semibold mb-2">📚 Historical Context</h4>
+                  <p>
+                    Created by David Heinemeier Hansson in 2004, Rails has
+                    powered major platforms like:
+                  </p>
+                  <ul class="list-disc pl-6 mt-2">
+                    <li>GitHub</li>
+                    <li>Shopify</li>
+                    <li>Airbnb (initial version)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cross-Platform Setup -->
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6 mt-10">
+              2. Setting Up Development Environment
+            </h2>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm mt-6">
+              <h3 class="text-xl font-semibold mb-4">Workspace Setup</h3>
+
+              <!-- macOS Instructions -->
+              <div class="mb-6">
+                <h4 class="font-semibold mb-2">🍎 For macOS Users</h4>
+                <pre
+                  class="bg-gray-800 p-4 rounded-lg"
+                ><code class="language-bash">
+            # Install Homebrew (if not installed)
+            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+            
+            # Install Ruby and Rails
+            brew install rbenv
+            rbenv init
+            rbenv install 3.2.2
+            rbenv global 3.2.2
+            gem install rails
+                            </code></pre>
+              </div>
+
+              <!-- Ubuntu Instructions -->
+              <div>
+                <h4 class="font-semibold mb-2">🐧 For Ubuntu Users</h4>
+                <pre
+                  class="bg-gray-800 p-4 rounded-lg"
+                ><code class="language-bash">
+            # Install dependencies
+            sudo apt-get install curl gnupg2
+            
+            # Install RVM (Ruby Version Manager)
+            curl -sSL https://get.rvm.io | bash -s stable
+            source ~/.rvm/scripts/rvm
+            rvm install 3.2.2
+            rvm use 3.2.2 --default
+            
+            # Install Rails
+            gem install rails
+                            </code></pre>
+              </div>
+
+              <!-- Verification -->
+              <div class="mt-6 bg-green-50 p-4 rounded-lg">
+                <h4 class="font-semibold mb-2">✅ Verify Installation</h4>
+                <p class="mb-2">Check versions for both OS:</p>
+                <pre
+                  class="bg-gray-800 p-4 rounded-lg"
+                ><code class="language-bash">
+            ruby -v  # Should show 3.2.2
+            rails -v # Should show 7.0.8 or newer
+                            </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="installation" class="mb-12 pt-8">
+            <!-- Cross-Platform Setup -->
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6">
+              2. Setting Up Development Environment
+            </h2>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm mt-6">
+              <h3 class="text-xl font-semibold mb-4">Workspace Setup</h3>
+
+              <!-- macOS Instructions -->
+              <div class="mb-6">
+                <h4 class="font-semibold mb-2">🍎 For macOS Users</h4>
+                <pre
+                  class="bg-gray-800 p-4 rounded-lg"
+                ><code class="language-bash">
+            # Install Homebrew (if not installed)
+            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+            
+            # Install Ruby and Rails
+            brew install rbenv
+            rbenv init
+            rbenv install 3.2.2
+            rbenv global 3.2.2
+            gem install rails
+                            </code></pre>
+              </div>
+
+              <!-- Ubuntu Instructions -->
+              <div>
+                <h4 class="font-semibold mb-2">🐧 For Ubuntu Users</h4>
+                <pre
+                  class="bg-gray-800 p-4 rounded-lg"
+                ><code class="language-bash">
+            # Install dependencies
+            sudo apt-get install curl gnupg2
+            
+            # Install RVM (Ruby Version Manager)
+            curl -sSL https://get.rvm.io | bash -s stable
+            source ~/.rvm/scripts/rvm
+            rvm install 3.2.2
+            rvm use 3.2.2 --default
+            
+            # Install Rails
+            gem install rails
+                            </code></pre>
+              </div>
+
+              <!-- Verification -->
+              <div class="mt-6 bg-green-50 p-4 rounded-lg">
+                <h4 class="font-semibold mb-2">✅ Verify Installation</h4>
+                <p class="mb-2">Check versions for both OS:</p>
+                <pre
+                  class="bg-gray-800 p-4 rounded-lg"
+                ><code class="language-bash">
+            ruby -v  # Should show 3.2.2
+            rails -v # Should show 7.0.8 or newer
+                            </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- MVC -->
+          <section id="mvc" class="mb-12 pt-8">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6">
+              3. MVC Architecture Explained
+            </h2>
+
+            <div class="space-y-6 text-gray-600">
+              <!-- MVC Diagram -->
+              <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h3 class="text-xl font-semibold mb-4">
+                  Visual Representation
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                  <!-- Model Card -->
+                  <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">💾 Model</h4>
+                    <p class="text-sm">Manages data and business logic</p>
+                    <pre class="mt-2"><code class="language-ruby">
+        class User < ApplicationRecord
+          validates :email, presence: true
+          has_many :posts
+        end
+                            </code></pre>
+                  </div>
+
+                  <!-- View Card -->
+                  <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">🖼️ View</h4>
+                    <p class="text-sm">Handles presentation layer</p>
+                    <pre class="mt-2"><code class="language-ruby">
+                              <%# app/views/users/show.html.erb %>
+        <h1><%= @user.name %></h1>
+        <p>Member since: <%= @user.created_at %></p>
+                                                  </code></pre>
+                  </div>
+
+                  <!-- Controller Card -->
+                  <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">🎮 Controller</h4>
+                    <p class="text-sm">Manages user requests</p>
+                    <pre class="mt-2"><code class="language-ruby">
+        class UsersController < ApplicationController
+          def show
+            @user = User.find(params[:id])
+          end
+        end
+                            </code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Workflow Explanation -->
+              <div class="bg-white p-6 rounded-lg shadow-sm mt-6">
+                <h3 class="text-xl font-semibold mb-4">
+                  Complete Workflow Example
+                </h3>
+                <ol class="list-decimal pl-6 space-y-4">
+                  <li>User visits <code>/users/1</code></li>
+                  <li>Routes → UsersController#show</li>
+                  <li>Controller fetches User(1) from Model</li>
+                  <li>Model queries database</li>
+                  <li>Controller passes user to View</li>
+                  <li>View renders HTML response</li>
+                </ol>
+
+                <div class="mt-6 bg-yellow-50 p-4 rounded-lg">
+                  <h4 class="font-semibold mb-2">💡 Pro Tip</h4>
+                  <p>Generate MVC components quickly using:</p>
+                  <pre
+                    class="bg-gray-800 p-4 rounded-lg mt-2"
+                  ><code class="language-bash">
+        rails generate scaffold User name:string email:string
+                        </code></pre>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="routing" class="mb-12 pt-8">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6">
+              4. Routing Fundamentals
+            </h2>
+
+            <div class="space-y-6 text-gray-600">
+              <!-- Concept Explanation -->
+              <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h3 class="text-xl font-semibold mb-4">What are Routes?</h3>
+                <p class="mb-4">
+                  Routes are URL patterns that map to controller actions. They
+                  work like:
+                </p>
+
+                <!-- Real-World Analogy -->
+                <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                  <p>📮 <strong>Post Office Analogy:</strong></p>
+                  <ul class="list-disc pl-6 mt-2">
+                    <li>URL = Mailing address</li>
+                    <li>Router = Postal sorting system</li>
+                    <li>Controller = Recipient processing mail</li>
+                  </ul>
+                </div>
+
+                <!-- Basic Route Example -->
+                <pre
+                  class="bg-gray-800 p-4 rounded-lg"
+                ><code class="language-ruby">
+        # config/routes.rb
+        Rails.application.routes.draw do
+          get '/about', to: 'pages#about'
+          get '/contact', to: 'pages#contact'
+        end
+                    </code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- RESTful Routes -->
+          <div class="bg-white p-6 rounded-lg shadow-sm mt-6">
+            <h3 class="text-xl font-semibold mb-4">RESTful Resource Routing</h3>
+            <p class="mb-4">Standard CRUD routes for a resource:</p>
+
+            <!-- Routes Table -->
+            <div class="overflow-x-auto">
+              <table class="min-w-full border-collapse">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="p-3 text-left border">HTTP Verb</th>
+                    <th class="p-3 text-left border">Path</th>
+                    <th class="p-3 text-left border">Controller#Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="p-3 border">GET</td>
+                    <td class="p-3 border">/posts</td>
+                    <td class="p-3 border">posts#index</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 border">GET</td>
+                    <td class="p-3 border">/posts/new</td>
+                    <td class="p-3 border">posts#new</td>
+                  </tr>
+                  <!-- Add all 7 RESTful routes -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Resource Generator -->
+            <div class="mt-6 bg-green-50 p-4 rounded-lg">
+              <h4 class="font-semibold mb-2">🚀 Quick Setup</h4>
+              <p>Generate all REST routes with one line:</p>
+              <pre
+                class="bg-gray-800 p-4 rounded-lg mt-2"
+              ><code class="language-ruby">
+resources :posts  # Creates all 7 RESTful routes
+      </code></pre>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm mt-6">
+            <h3 class="text-xl font-semibold mb-4">
+              Advanced Routing Techniques
+            </h3>
+
+            <!-- Namespaces -->
+            <div class="mb-6">
+              <h4 class="font-semibold mb-2">API Namespacing</h4>
+              <pre
+                class="bg-gray-800 p-4 rounded-lg"
+              ><code class="language-ruby">
+        namespace :api do
+          namespace :v1 do
+            resources :users
+          end
+        end
+        # Creates /api/v1/users routes
+                </code></pre>
+            </div>
+
+            <!-- Member vs Collection -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h4 class="font-semibold mb-2">Member Routes</h4>
+                <pre><code class="language-ruby">
+        resources :posts do
+          member do
+            get 'preview'
+          end
+        end
+        # /posts/1/preview
+                    </code></pre>
+              </div>
+
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h4 class="font-semibold mb-2">Collection Routes</h4>
+                <pre><code class="language-ruby">
+        resources :posts do
+          collection do
+            get 'search'
+          end
+        end
+        # /posts/search
+                    </code></pre>
+              </div>
+            </div>
+          </div>
+
+          <section id="controllers" class="mb-12 pt-8">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6">
+              5. Controller Implementation
+            </h2>
+
+            <div class="space-y-6 text-gray-600">
+              <!-- Controller Fundamentals -->
+              <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h3 class="text-xl font-semibold mb-4">
+                  What Do Controllers Do?
+                </h3>
+
+                <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                  <p>🎮 <strong>Controller Responsibilities:</strong></p>
+                  <ul class="list-disc pl-6 mt-2">
+                    <li>Process incoming requests</li>
+                    <li>Interact with models</li>
+                    <li>Prepare data for views</li>
+                    <li>Handle response formats (HTML/JSON)</li>
+                  </ul>
+                </div>
+
+                <!-- Basic Controller Example -->
+                <pre
+                  class="bg-gray-800 p-4 rounded-lg"
+                ><code class="language-ruby">
+      # app/controllers/posts_controller.rb
+      class PostsController < ApplicationController
+        def index
+          @posts = Post.all
+        end
+      
+        def show
+          @post = Post.find(params[:id])
+        end
+      end
+                  </code></pre>
+              </div>
+
+              <!-- Security Section -->
+              <div class="bg-white p-6 rounded-lg shadow-sm mt-6">
+                <h3 class="text-xl font-semibold mb-4">Secure Data Handling</h3>
+
+                <div class="bg-red-50 p-4 rounded-lg mb-4">
+                  <p>🔒 <strong>Never Do This:</strong></p>
+                  <pre
+                    class="bg-gray-800 p-4 rounded-lg mt-2"
+                  ><code class="language-ruby">
+# UNSAFE - Allows mass assignment
+Post.new(params[:post])
+              </code></pre>
+                </div>
+
+                <!-- Strong Parameters -->
+                <div class="bg-green-50 p-4 rounded-lg">
+                  <p>✅ <strong>Safe Approach (Strong Parameters):</strong></p>
+                  <pre
+                    class="bg-gray-800 p-4 rounded-lg mt-2"
+                  ><code class="language-ruby">
+private
+
+def post_params
+params.require(:post).permit(:title, :content, :category_id)
+end
+              </code></pre>
+                </div>
+
+                <!-- Usage in Actions -->
+                <div class="mt-6">
+                  <pre
+                    class="bg-gray-800 p-4 rounded-lg"
+                  ><code class="language-ruby">
+def create
+@post = Post.new(post_params)
+# ...
+end
+              </code></pre>
+                </div>
+              </div>
+
+              <!-- Filters Section -->
+              <div class="bg-white p-6 rounded-lg shadow-sm mt-6">
+                <h3 class="text-xl font-semibold mb-4">Controller Filters</h3>
+
+                <!-- Before Action Example -->
+                <div class="mb-6">
+                  <pre
+                    class="bg-gray-800 p-4 rounded-lg"
+                  ><code class="language-ruby">
+    before_action :set_post, only: [:show, :edit, :update, :destroy]
+    
+    private
+    
+    def set_post
+      @post = Post.find(params[:id])
+    end
+                    </code></pre>
+                </div>
+
+                <!-- Filter Types -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">before_action</h4>
+                    <p class="text-sm">Runs before specified actions</p>
+                  </div>
+                  <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">after_action</h4>
+                    <p class="text-sm">Runs after specified actions</p>
+                  </div>
+                  <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">around_action</h4>
+                    <p class="text-sm">Wraps around actions</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Response Handling -->
+              <div class="bg-white p-6 rounded-lg shadow-sm mt-6">
+                <h3 class="text-xl font-semibold mb-4">Format Responses</h3>
+
+                <!-- Multi-Format Example -->
+                <pre
+                  class="bg-gray-800 p-4 rounded-lg"
+                ><code class="language-ruby">
+def show
+@post = Post.find(params[:id])
+
+respond_to do |format|
+  format.html # show.html.erb
+  format.json { render json: @post }
+  format.pdf do
+    render pdf: "post_#{@post.id}", template: 'posts/show'
+  end
+end
+end
+          </code></pre>
+
+                <!-- Status Codes -->
+                <div class="mt-6 bg-yellow-50 p-4 rounded-lg">
+                  <p>📢 <strong>Common HTTP Status Codes:</strong></p>
+                  <ul class="list-disc pl-6 mt-2">
+                    <li><code>200 OK</code> - Success</li>
+                    <li><code>404 Not Found</code> - Missing resource</li>
+                    <li>
+                      <code>422 Unprocessable Entity</code> - Validation errors
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="views" class="mb-12 pt-8">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6">
+              6. Views & ERB Templates
+            </h2>
+
+            <div class="space-y-6 text-gray-600">
+              <!-- ERB Fundamentals -->
+              <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h3 class="text-xl font-semibold mb-4">Understanding ERB</h3>
+
+                <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                  <p>📝 <strong>ERB = Embedded Ruby</strong></p>
+                  <ul class="list-disc pl-6 mt-2">
+                    <li><code>&lt;% %></code> Executes Ruby code</li>
+                    <li><code>&lt;%= %></code> Outputs Ruby result</li>
+                    <li><code>&lt;%# %></code> ERB comments</li>
+                  </ul>
+                </div>
+
+                <!-- Basic Example -->
+                <pre
+                  class="bg-gray-800 p-4 rounded-lg"
+                ><code class="language-ruby">
+        <%# app/views/posts/index.html.erb %>
+        &lt;h1 class="text-2xl font-bold mb-4">&lt;%= @user.name %>'s Posts&lt;/h1>
+        
+        &lt;% @posts.each do |post| %>
+          &lt;div class="post-card">
+            &lt;h2>&lt;%= post.title %>&lt;/h2>
+            &lt;p>&lt;%= truncate(post.content, length: 150) %>&lt;/p>
+          &lt;/div>
+        &lt;% end %>
+                    </code></pre>
+
+                <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+                  <h4 class="font-semibold mb-2">🧠 What This Does:</h4>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li>
+                      <strong>Line 2:</strong> Displays the user's name from
+                      controller's <code>@user</code> instance variable
+                    </li>
+                    <li>
+                      <strong>Line 4:</strong> Starts loop through
+                      <code>@posts</code> collection
+                    </li>
+                    <li>
+                      <strong>Line 5-7:</strong> Creates a card for each post
+                      with truncated content
+                    </li>
+                    <li><strong><%= %></strong> Outputs values to HTML</li>
+                    <li>
+                      <strong><% %></strong> Executes logic without output
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Reusable Components -->
+              <div class="bg-white p-6 rounded-lg shadow-sm mt-6">
+                <h3 class="text-xl font-semibold mb-4">Partial Templates</h3>
+
+                <!-- Partial Example -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <pre
+                      class="bg-gray-800 p-4 rounded-lg"
+                    ><code class="language-ruby">
+<%# app/views/posts/_form.html.erb %>
+&lt;%= form_with model: @post do |form| %>
+&lt;div class="field">
+  &lt;%= form.label :title %>
+  &lt;%= form.text_field :title, class: "input" %>
+&lt;/div>
+&lt;% end %>
+                  </code></pre>
+                  </div>
+                  <div>
+                    <pre
+                      class="bg-gray-800 p-4 rounded-lg"
+                    ><code class="language-ruby">
+<%# app/views/posts/new.html.erb %>
+&lt;h1>New Post&lt;/h1>
+&lt;%= render 'form' %>
+                  </code></pre>
+                  </div>
+                </div>
+
+                <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+                  <h4 class="font-semibold mb-2">🧠 Key Concepts:</h4>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li>
+                      <strong>Partial Files:</strong> Start with underscore
+                      <code>_form.html.erb</code>
+                    </li>
+                    <li>
+                      <strong>form_with:</strong> Rails helper creating
+                      &lt;form> tag with proper attributes
+                    </li>
+                    <li>
+                      <strong>render 'form':</strong> Reuses the partial
+                      template
+                    </li>
+                    <li>
+                      <strong>@post:</strong> Instance variable passed from
+                      controller
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Layout Structure -->
+                <div class="mt-6 bg-green-50 p-4 rounded-lg">
+                  <h4 class="font-semibold mb-2">Application Layout</h4>
+                  <pre
+                    class="bg-gray-800 p-4 rounded-lg"
+                  ><code class="language-ruby">
+<%# app/views/layouts/application.html.erb %>
+&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+  &lt;title>MyApp&lt;/title>
+  &lt;%= csrf_meta_tags %>
+&lt;/head>
+&lt;body class="bg-gray-50">
+  &lt;%= yield %> &lt;!-- Page content injects here -->
+&lt;/body>
+&lt;/html>
+              </code></pre>
+
+                  <div class="mt-4 p-4 bg-gray-100 rounded-lg">
+                    <h4 class="font-semibold mb-2">🔍 Explanation:</h4>
+                    <ul class="list-disc pl-6 space-y-2">
+                      <li>
+                        <strong>csrf_meta_tags:</strong> Security feature
+                        preventing CSRF attacks
+                      </li>
+                      <li>
+                        <strong>yield:</strong> Placeholder where individual
+                        view content is inserted
+                      </li>
+                      <li>
+                        <strong>Layouts:</strong> Wrap all views for consistent
+                        header/footer
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Helpers Section -->
+              <div class="bg-white p-6 rounded-lg shadow-sm mt-6">
+                <h3 class="text-xl font-semibold mb-4">
+                  Built-in View Helpers
+                </h3>
+
+                <!-- Common Helpers -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Link Helpers</h4>
+                    <pre><code class="language-ruby">
+    &lt;%= link_to "View Post", post_path(@post), 
+        class: "btn-primary", 
+        data: { turbo_method: :delete } %>
+                        </code></pre>
+                    <div class="mt-2 p-3 bg-white rounded-lg">
+                      <p class="text-sm">Generates:</p>
+                      <code class="text-sm break-words">
+                        &lt;a href="/posts/1" class="btn-primary"
+                        data-turbo-method="delete"> View Post &lt;/a>
+                      </code>
+                      <p class="mt-2 text-gray-600 text-sm">
+                        Turbo Drive handles DELETE request asynchronously
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Form Helpers</h4>
+                    <pre><code class="language-ruby">
+    &lt;%= form_for @user do |f| %>
+      &lt;%= f.text_field :email, placeholder: "Enter email" %>
+      &lt;%= f.submit "Save", class: "btn-submit" %>
+    &lt;% end %>
+                        </code></pre>
+                    <div class="mt-2 p-3 bg-white rounded-lg">
+                      <p class="text-sm">Generates:</p>
+                      <code class="text-sm break-words">
+                        &lt;form action="/users" method="post"> &lt;input
+                        type="text" name="user[email]" placeholder="Enter
+                        email"> &lt;button type="submit" class="btn-submit">
+                        Save &lt;/button> &lt;/form>
+                      </code>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Custom Helpers -->
+                <div class="mt-6 bg-yellow-50 p-4 rounded-lg">
+                  <h4 class="font-semibold mb-2">Creating Custom Helpers</h4>
+                  <pre
+                    class="bg-gray-800 p-4 rounded-lg"
+                  ><code class="language-ruby">
+    # app/helpers/posts_helper.rb
+    module PostsHelper
+      def formatted_date(date)
+        date.strftime("%B %d, %Y") #=> "January 01, 2023"
+      end
+    end
+                    </code></pre>
+                  <div class="mt-4 p-4 bg-gray-100 rounded-lg">
+                    <h4 class="font-semibold mb-2">💡 Usage:</h4>
+                    <ul class="list-disc pl-6 space-y-2">
+                      <li>Available in all views after creation</li>
+                      <li>
+                        Call with:
+                        <code>&lt;%= formatted_date(@post.created_at) %></code>
+                      </li>
+                      <li>Keeps complex logic out of views</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Asset Pipeline -->
+              <div class="bg-white p-6 rounded-lg shadow-sm mt-6">
+                <h3 class="text-xl font-semibold mb-4">Managing Assets</h3>
+
+                <!-- CSS/JS Inclusion -->
+                <pre
+                  class="bg-gray-800 p-4 rounded-lg"
+                ><code class="language-ruby">
+&lt;%# In layout file %>
+&lt;%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+&lt;%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+          </code></pre>
+
+                <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+                  <h4 class="font-semibold mb-2">📦 What This Means:</h4>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li>
+                      <strong>stylesheet_link_tag:</strong> Links compiled CSS
+                      from <code>app/assets/stylesheets</code>
+                    </li>
+                    <li>
+                      <strong>javascript_include_tag:</strong> Loads JS from
+                      <code>app/assets/javascript</code>
+                    </li>
+                    <li>
+                      <strong>data-turbo-track:</strong> Auto-reloads assets
+                      when changed
+                    </li>
+                    <li>
+                      <strong>defer:</strong> Loads JavaScript after HTML
+                      parsing
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Image Handling -->
+                <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Image Tag</h4>
+                    <pre><code class="language-ruby">
+&lt;%= image_tag "logo.png", 
+  alt: "App Logo", 
+  class: "w-32 h-auto" %>
+                  </code></pre>
+                    <div class="mt-2 p-3 bg-white rounded-lg">
+                      <p class="text-sm">Looks in:</p>
+                      <code class="text-sm">app/assets/images/logo.png</code>
+                      <p class="mt-2 text-sm">Generates:</p>
+                      <code class="text-sm break-words">
+                        &lt;img src="/assets/logo-abc123.png" alt="App Logo"
+                        class="w-32 h-auto">
+                      </code>
+                    </div>
+                  </div>
+
+                  <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Asset Path</h4>
+                    <pre><code class="language-ruby">
+&lt;%= link_to "Download Guide", 
+  asset_path("user_guide.pdf") %>
+                  </code></pre>
+                    <div class="mt-2 p-3 bg-white rounded-lg">
+                      <p class="text-sm">File location:</p>
+                      <code class="text-sm">public/assets/user_guide.pdf</code>
+                      <p class="mt-2 text-sm">Generates path:</p>
+                      <code class="text-sm">/assets/user_guide.pdf</code>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </article>
+      </main>
+    </div>
+
+    <script>
+      // Toggle sidebar on mobile
+      const sidebar = document.querySelector(".sidebar");
+      const sidebarToggle = document.getElementById("sidebarToggle");
+
+      function toggleSidebar() {
+        sidebar.classList.toggle("-translate-x-full");
+      }
+
+      // Toggle button click
+      sidebarToggle.addEventListener("click", toggleSidebar);
+
+      // Close sidebar when clicking outside on mobile
+      document.addEventListener("click", (event) => {
+        if (
+          window.innerWidth < 768 &&
+          !sidebar.contains(event.target) &&
+          !sidebarToggle.contains(event.target)
+        ) {
+          sidebar.classList.add("-translate-x-full");
+        }
+      });
+
+      // Close sidebar when resizing to desktop
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          sidebar.classList.remove("-translate-x-full");
+        }
+      });
+    </script>
+
+    <style>
+      .sidebar {
+        scrollbar-width: thin;
+        scrollbar-color: #4a5568 #2d3748;
+      }
+
+      .sidebar::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      .sidebar::-webkit-scrollbar-thumb {
+        background-color: #4a5568;
+        border-radius: 4px;
+      }
+
+      @media (max-width: 767px) {
+        .sidebar {
+          width: 75%;
+          box-shadow: 4px 0 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        main {
+          margin-left: 0 !important;
+        }
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script src="scripts.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>
